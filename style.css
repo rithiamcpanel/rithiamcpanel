@@ -1,0 +1,559 @@
+
+/* Genel Ayarlar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(17, 17, 17, 0.95); /* Opaklık artırıldı */
+  padding: 1.2rem 2.5rem; /* Daha geniş padding */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid #222;
+  transition: background 0.3s, padding 0.3s;
+}
+
+.nav-menu li a {
+  font-size: 1.05rem; /* Yazı boyutu biraz büyüdü */
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, transform 0.3s;
+}
+
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-menu li a {
+  color: #e4e4e4;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.nav-menu li a:hover {
+  color: #f22c35;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.discord-button {
+  background-color: #5865F2;
+  color: #fff !important;
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.discord-button:hover {
+  background-color: #4752c4;
+  transform: scale(1.05);
+}
+
+/* Profil ve Çıkış Butonlarını Sağa Al */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-menu li.user-section {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-left, .nav-right {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .nav-left.show, .nav-right.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  background: url("images/backgorund.png");
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero-logo {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  color: #ccc;
+}
+
+/* Animasyonlar */
+.animated {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeSlideDown 1s ease-out forwards;
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in forwards;
+}
+.fade-in.delay {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeSlideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scroll gölgelendirme */
+.navbar.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  background-color: rgba(10, 10, 10, 0.95);
+}
+
+
+/* Hero Logo Büyütme ve Hover Efekti */
+.hero-logo {
+  width: 260px;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+.hero-logo:hover {
+  transform: scale(1.08);
+}
+
+/* Galeri */
+.gallery {
+  padding: 4rem 2rem;
+  background-color: #111;
+  text-align: center;
+}
+.gallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.gallery-grid img {
+  width: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #0a0a0a;
+  color: #fff;
+  position: relative;
+}
+
+.site-footer .social-icons {
+  margin-top: 10px;
+}
+
+.site-footer .social-icons a {
+  text-decoration: none; /* ALT ÇİZGİYİ KALDIRIR */
+  color: #ccc;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.site-footer .social-icons a:hover {
+  color: #f32323; /* Hover rengi: Açık mavi */
+}
+
+.info-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(200, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: default;
+  min-width: 240px;
+  color: #fff;
+}
+
+.info-card:hover {
+  transform: scale(1.05);
+  background-color: #f22c35;
+  color: #000;
+}
+
+.info-card:hover i {
+  color: #000;
+}
+
+.info-card i {
+  font-size: 2rem;
+  color: #f22c35;
+  margin-bottom: 0.5rem;
+}
+
+.info-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.ip-text {
+  font-weight: bold;
+}
+
+.copy-msg {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #0f0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ip-card:hover .copy-msg {
+  opacity: 1;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gecikmeli fade-in */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
+.delay-6 { animation-delay: 1.2s; }
+.delay-7 { animation-delay: 1.4s; }
+/* Modal Temel Stil */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #111;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  color: #fff;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  color: #f22c35;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #222;
+  color: white;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #f22c35;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000;
+  transition: 0.3s ease;
+}
+
+.modal-content button:hover {
+  background: #83191f;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.category-menu {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.category-btn {
+  padding: 10px 20px;
+  background-color: #242424;
+  color: #fff;
+  border: none;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.category-btn:hover,
+.category-btn.active {
+  background-color: #f22c35;
+}
+
+
+.custom-discord-card {
+  background: #23272A;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 300px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.discord-info i {
+  font-size: 32px;
+  color: #7289da;
+}
+
+.discord-info .join-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #5865F2;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.discord-info .join-btn:hover {
+  background: #4752c4;
+}
+html {
+  scroll-behavior: smooth;
+}
+.shop-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.shop-card {
+  background-color: #1a1a1a;
+  border-radius: 30px;
+  padding: 1.5rem;
+  width: 250px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.shop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(242, 44, 53, 0.4);
+}
+
+.shop-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #f22c35;
+}
+
+.shop-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 0.75rem;
+  min-height: 40px;
+}
+
+.shop-card .price {
+  display: block;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.shop-card .buy-btn {
+  padding: 0.7rem 1.2rem;
+  background-color: #f22c35;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.shop-card .buy-btn:hover {
+  background-color: #83191f;
+  transform: scale(1.05);
+}
+.shop-card img {
+  width: 150px;       /* Eskisi 80px idi */
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.shop-card:hover img {
+  transform: scale(1.1);
+}
+/* Yukarıdan aşağıya görünme animasyonu */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+
+/* Ana animasyon tanımı */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

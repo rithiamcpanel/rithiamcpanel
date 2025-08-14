@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skyrithia Mağaza</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" type="image/png" href="images/favlogo.png">
+  <style>
+.shop-hero {
+    background-size: cover;
+    background-position: center 85%; /* Alt kısmı biraz yukarı alır, orantılı çalışır */
+    height: 50vh; /* Görünen alan yüksekliği ekranın yarısı */
+    overflow: hidden;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar fade-in delay-1" id="navbar">
+    <div class="navbar-inner">
+      <ul class="nav-menu nav-left">
+        <li><a href="index.html"><i class="fas fa-home"></i> Anasayfa</a></li>
+        <li><a href="shop.html"><i class="fas fa-shopping-cart"></i> Mağaza</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+      <ul class="nav-menu nav-right">
+        <li><a href="#login" class="hero-button" onclick="openModal('loginModal')"><i class="fas fa-sign-in-alt"></i> Giriş Yap</a></li>
+        <li><a href="#register" class="hero-button" onclick="openModal('registerModal')"><i class="fas fa-user-plus"></i> Kayıt Ol</a></li>
+        <li><a href="https://discord.gg/skyrithia" target="_blank" class="discord-button"><i class="fab fa-discord"></i> Discord</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero shop-hero fade-in-up delay-1">
+  <div class="overlay"></div>
+  <div class="hero-content fade-in-up delay-2">
+    <h1 class="fade-in-up delay-3">Skyrithia Mağazası</h1>
+    <p class="fade-in-up delay-4">VIP paketler, spawnerlar ve daha fazlası burada!</p>
+  </div>
+</section>
+
+
+  <!-- Mağaza Bölümü -->
+  <section class="shop-section">
+    <br></br>
+    <div class="category-menu">
+      <button class="category-btn active" data-category="vip">VIP Paketleri</button>
+      <button class="category-btn" data-category="keys">Spawnerlar</button>
+      <button class="category-btn" data-category="special">Kasa Anahtarları</button>
+      <button class="category-btn" data-category="cosmetic">Kozmetik</button>
+    </div>
+
+    <!-- VIP Paketleri -->
+ <div class="shop-category fade-in-up delay-3 category-content" id="category-vip">
+  <div class="shop-grid">
+    <div class="shop-card">
+      <img src="images/vip.png" alt="VIP" />
+      <p>Fly Hakkı (1 Ay)<br>
+      VIP Kasa Anahtarı<br>
+    VIP Kit<br>
+    <br>
+  </p>
+      <span class="price">₺50</span>
+      <a href="https://www.shopier.com/38459381" 
+   target="_blank" class="buy-btn">Satın Al</a>
+    </div>
+    <div class="shop-card">
+      <img src="images/ultravip.png" alt="VIP2" />
+      <p>Fly Hakkı (1 Ay)<br>
+      ULTRAVIP Kasa Anahtarı<br>
+    ULTRAVIP Kit<br>
+    /repair Komutu
+    <br>
+    <br>
+      <span class="price">₺100</span>
+      <a href="https://www.shopier.com/38459441" 
+   target="_blank" class="buy-btn">Satın Al</a>
+    </div>
+    <div class="shop-card">
+      <img src="images/rithiavip.png" alt="VIP3" />
+      <p>Fly Hakkı (1 Ay)<br>
+      RITHIAVIP Kasa Anahtarı<br>
+    RITHIAVIP Kit<br>
+    /repair Komutu<br>
+    Sanal Chest Hakkı
+    <br>
+    <br>
+      <span class="price">₺150</span>
+      <a href="https://www.shopier.com/38459528" 
+   target="_blank" class="buy-btn">Satın Al</a>
+    </div>
+    <div class="shop-card">
+      <img src="images/rithiavipplus.png" alt="VIP4" />
+     <p>Fly Hakkı (3 Ay)<br>
+      RITHIAVIP+ Kasa Anahtarı<br>
+    RITHIAVIP Kit+<br>
+    /repair Komutu<br>
+    Sanal Chest Hakkı (2 Sayfa)
+    <br>
+    <br>
+      <span class="price">₺250</span>
+      <a href="https://www.shopier.com/38459543" 
+   target="_blank" class="buy-btn">Satın Al</a>
+    </div>
+    <div class="shop-card">
+      <img src="images/sponsor.png" alt="VIP5" />
+      <p>Fly Hakkı (3 Ay)<br>
+      Sponsor Kasa Anahtarı<br>
+      3 Spawner Kasa Anahtarı<br>
+    Sponsor Kit<br>
+    /repair Komutu<br>
+    Sanal Chest Hakkı (2 Sayfa)
+    <br>
+    <br>
+      <span class="price">₺500</span>
+      <a href="https://www.shopier.com/38459555" 
+   target="_blank" class="buy-btn">Satın Al</a>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Anahtarlar -->
+    <div class="shop-category fade-in-up delay-4 category-content" id="category-keys" style="display: none;">
+      <div class="shop-grid">
+        <div class="shop-card">
+          <img src="images/spiderspawner.webp" alt="Spawner" />
+          <h4>ÖRÜMCEK SPAWNER</h4>
+          <span class="price">₺40</span>
+          <a href="https://www.shopier.com/38460316" 
+   target="_blank" class="buy-btn">Satın Al</a>
+        </div>
+        <div class="shop-card">
+          <img src="images/guardianspawner.webp" alt="Spawner2" />
+          <h4>GARDİYAN SPAWNER</h4>
+          <span class="price">₺60</span>
+          <a href="https://www.shopier.com/38460326" 
+   target="_blank" class="buy-btn">Satın Al</a>
+        </div>
+        <div class="shop-card">
+          <img src="images/piglinspawner.png" alt="Spawner3" />
+          <h4>PİGLİN SPAWNER</h4>
+          <span class="price">₺80</span>
+          <a href="https://www.shopier.com/38460332" 
+   target="_blank" class="buy-btn">Satın Al</a>
+        </div>
+        <div class="shop-card">
+          <img src="images/golemspawner.webp" alt="Spawner4" />
+          <h4>GOLEM SPAWNER</h4>
+          <span class="price">₺100</span>
+          <a href="https://www.shopier.com/38460344" 
+   target="_blank" class="buy-btn">Satın Al</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Özel Paketler -->
+    <div class="shop-category fade-in-up delay-5 category-content" id="category-special" style="display: none;">
+      <div class="shop-grid">
+        <div class="shop-card">
+          <img src="images/key1.png" alt="key1" />
+          <h4>Mesaj Kasa Anahtarı</h4>
+          <p>Bilgi için /kasabilgi</p>
+          <span class="price">₺35</span>
+          <a href="#" class="buy-btn">Satın Al</a>
+        </div>
+        <div class="shop-card">
+          <img src="images/key2.png" alt="key2" />
+          <h4>Nadir Kasa Anahtarı</h4>
+          <p>Bilgi için /kasabilgi</p>
+          <span class="price">₺35</span>
+          <a href="#" class="buy-btn">Satın Al</a>
+        </div>
+        <div class="shop-card">
+          <img src="images/key3.png" alt="key3" />
+          <h4>Spawner Kasa Anahtarı</h4>
+          <p>Bilgi için /kasabilgi</p>
+          <span class="price">₺35</span>
+          <a href="#" class="buy-btn">Satın Al</a>
+        </div>
+        <div class="shop-card">
+          <img src="images/key4.png" alt="key4" />
+          <h4>Efsanevi Kasa Anahtarı</h4>
+          <p>Bilgi için /kasabilgi</p>
+          <span class="price">₺35</span>
+          <a href="#" class="buy-btn">Satın Al</a>
+        </div>
+        <div class="shop-card">
+          <img src="images/key5.png" alt="key5" />
+          <h4>Rithia Kasa Anahtarı</h4>
+          <p>Bilgi için /kasabilgi</p>
+          <span class="price">₺35</span>
+          <a href="#" class="buy-btn">Satın Al</a>
+        </div>
+      </div>
+    </div>
+      <!-- Kozmetik -->
+<div class="shop-category fade-in-up delay-6 category-content" id="category-cosmetic" style="display: none;">
+  <div class="shop-grid">
+    <div class="shop-card">
+      <img src="images/cosmetic1.png" alt="Kozmetik1" />
+      <h4>Parlayan Kanatlar</h4>
+      <p>Görsel efekt sağlar. /kozmetik ile yönetebilirsin.</p>
+      <span class="price">₺25</span>
+      <a href="#" class="buy-btn">Satın Al</a>
+    </div>
+    <div class="shop-card">
+      <img src="images/cosmetic2.png" alt="Kozmetik2" />
+      <h4>Özel Takma İsim</h4>
+      <p>Renkli ve stilize bir takma ad!</p>
+      <span class="price">₺40</span>
+      <a href="#" class="buy-btn">Satın Al</a>
+    </div>
+    <div class="shop-card">
+      <img src="images/cosmetic3.png" alt="Kozmetik3" />
+      <h4>Parti Efekti</h4>
+      <p>Yürürken yıldız ve ışık efektleri bırak!</p>
+      <span class="price">₺30</span>
+      <a href="#" class="buy-btn">Satın Al</a>
+    </div>
+  </div>
+</div>
+
+  </section>
+  
+
+  <!-- Footer -->
+  <footer class="site-footer fade-in delay-7">
+  <p>© 2025 Skyrithia | Tüm hakları saklıdır.</p>
+  
+  <div class="social-icons">
+    <a href="https://discord.gg/skyrithia" target="_blank" title="Discord">
+      <i class="fab fa-discord"></i>
+    </a>
+    <a href="https://instagram.com/skyrithia" target="_blank" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://youtube.com/@skyrithia" target="_blank" title="YouTube">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </div>
+</footer>
+
+  <!-- Modals (Boş Temel) -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('loginModal')">&times;</span>
+      <h2>Giriş Yap</h2>
+      <input type="text" placeholder="Kullanıcı Adı">
+      <input type="password" placeholder="Şifre">
+      <button>Giriş</button>
+    </div>
+  </div>
+
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('registerModal')">&times;</span>
+      <h2>Kayıt Ol</h2>
+      <input type="text" placeholder="Kullanıcı Adı">
+      <input type="email" placeholder="E-posta">
+      <input type="password" placeholder="Şifre">
+      <button>Kayıt Ol</button>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    // Kategori Geçişi
+    const buttons = document.querySelectorAll('.category-btn');
+    const categories = document.querySelectorAll('.category-content');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const target = btn.dataset.category;
+        categories.forEach(cat => {
+          cat.style.display = cat.id === 'category-' + target ? 'block' : 'none';
+        });
+      });
+    });
+
+    // Modal Açma/Kapatma
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+      }
+    };
+  </script>
+<script src="script.js"></script>
+</body>
+</html>
