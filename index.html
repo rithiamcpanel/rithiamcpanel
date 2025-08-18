@@ -125,6 +125,29 @@
   </div>
 
   <script>
+    async function fetchPlayerCount() {
+    try {
+      const response = await fetch("https://api.mcsrvstat.us/2/play.rithiamc.com");
+      const data = await response.json();
+
+      if (data && data.online) {
+        document.getElementById("player-count").innerText =
+          data.players.online + " oyuncu çevrimiçi";
+      } else {
+        document.getElementById("player-count").innerText = "Sunucu kapalı";
+      }
+    } catch (error) {
+      document.getElementById("player-count").innerText = "Durum alınamadı";
+    }
+  }
+
+  // Sayfa açıldığında çalıştır
+  fetchPlayerCount();
+
+  // Her 30 saniyede bir güncelle
+  setInterval(fetchPlayerCount, 30000);
+
+    
   document.addEventListener("DOMContentLoaded", function () {
     const loginForm = document.getElementById("loginForm");
     const userStatus = document.getElementById("userStatus");
