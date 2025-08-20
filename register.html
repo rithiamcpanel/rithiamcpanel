@@ -1,6 +1,120 @@
-<form method="POST" action="register.php">
-  <input type="text" name="username" placeholder="Kullanıcı Adı" required>
-  <input type="email" name="email" placeholder="E-posta" required>
-  <input type="password" name="password" placeholder="Şifre" required>
-  <button type="submit">Kayıt Ol</button>
-</form>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kayıt Ol - RithiaMC</title>
+  <link rel="stylesheet" href="register.css">
+
+  <!-- Font Awesome (ikonlar için) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Popup kutusu */
+    #warning-popup {
+      position: fixed;
+      top: -100px; /* başlangıçta gizli */
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f22c35;
+      color: #fff;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      z-index: 9999;
+      transition: top 0.5s ease;
+    }
+
+    #warning-popup.show {
+      top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <div class="register-box">
+      <a href="index.html" class="back-btn"><i class="fa fa-arrow-left"></i> Anasayfa</a>
+
+      <h1>Kayıt Ol</h1>
+      <p>Sunucumuza katılmak için kayıt ol.</p>
+      <form id="registerForm">
+
+        <!-- Kullanıcı Adı -->
+        <div class="input-group">
+          <span class="icon"><i class="fa-solid fa-user"></i></span>
+          <input type="text" placeholder="Kullanıcı Adı" required>
+        </div>
+
+        <!-- E-Posta -->
+        <div class="input-group">
+          <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+          <input type="email" placeholder="E-Posta" required>
+        </div>
+
+        <!-- Şifre -->
+        <div class="input-group">
+          <span class="icon"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" placeholder="Şifre" id="password" required>
+        </div>
+
+        <!-- Şifre Tekrar -->
+        <div class="input-group">
+          <span class="icon"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" placeholder="Şifre (Tekrar)" id="confirmPassword" required>
+        </div>
+
+        <div class="terms">
+          <input type="checkbox" id="terms">
+          <label for="terms">
+            <a href="terms.html" target="_blank">Kullanım Koşulları</a>'nı okudum ve kabul ediyorum
+          </label>
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="btn-primary">Kayıt Ol</button>
+          <a href="login.html" class="btn-secondary" id="loginBtn">Giriş Yap</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Uyarı popup -->
+  <div id="warning-popup"><i class="fa-solid fa-triangle-exclamation"></i> <span id="popup-text"></span></div>
+
+  <script>
+    const popup = document.getElementById("warning-popup");
+    const popupText = document.getElementById("popup-text");
+
+    function showPopup(message) {
+      popupText.textContent = message;
+      popup.classList.add("show");
+      setTimeout(() => popup.classList.remove("show"), 2000);
+    }
+
+    // Form gönderimini engelle
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        showPopup("Şifreler uyuşmuyor!");
+        return;
+      }
+
+      showPopup("Şu anda kayıtlar aktif değil!");
+    });
+
+    // Giriş butonunu engelle
+    document.getElementById("loginBtn").addEventListener("click", function(e) {
+      e.preventDefault();
+      showPopup("Şu anda sunucu aktif değil!");
+    });
+  </script>
+</body>
+</html>

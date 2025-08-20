@@ -107,7 +107,7 @@ body {
   .nav-left, .nav-right {
     display: none;
     flex-direction: column;
-    background: #111;
+    background: #a89e9e;
     position: absolute;
     top: 60px;
     left: 0;
@@ -128,6 +128,8 @@ body {
 .hero {
   height: 100vh;
   background: url("images/backgorund.png");
+  background-size: cover; /* Resmi ekrana orantılı şekilde büyütür */
+  background-position: center 90%;
   position: relative;
   display: flex;
   align-items: center;
@@ -142,7 +144,6 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .hero-content {
@@ -151,10 +152,26 @@ body {
   max-width: 800px;
 }
 
+/* Logo Yukarı–Aşağı Animasyon */
 .hero-logo {
-  width: 180px;
+  width: 260px;
   margin-bottom: 20px;
+  transition: transform 0.4s ease;
+  animation: float 3s ease-in-out infinite; /* Animasyon burada */
 }
+
+.hero-logo:hover {
+  transform: scale(1.08); /* Hover efekti */
+}
+
+/* Keyframes */
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+
 
 .hero h1 {
   font-size: 3.5rem;
@@ -200,15 +217,7 @@ body {
 }
 
 
-/* Hero Logo Büyütme ve Hover Efekti */
-.hero-logo {
-  width: 260px;
-  margin-bottom: 20px;
-  transition: transform 0.4s ease;
-}
-.hero-logo:hover {
-  transform: scale(1.08);
-}
+
 
 /* Galeri */
 .gallery {
@@ -557,3 +566,4 @@ html {
     transform: translateY(0);
   }
 }
+

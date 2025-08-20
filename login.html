@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giriş Yap - RithiaMC</title>
+  <link rel="stylesheet" href="register.css">
+
+  <!-- Font Awesome (ikonlar için) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Popup Stili (register.html’deki gibi) */
+    #warning-popup {
+      position: fixed;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f22c35;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      display: none;
+      z-index: 9999;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: fadeIn 0.3s ease;
+    }
+
+    #warning-popup i {
+      margin-right: 8px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -20px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <div class="register-box">
+      <a href="index.html" class="back-btn"><i class="fa fa-arrow-left"></i> Anasayfa</a>
+
+      <h1>Giriş Yap</h1>
+      <p>Tekrardan hoş geldin!</p>
+      <form id="loginForm">
+
+        <!-- Kullanıcı Adı -->
+        <div class="input-group">
+          <span class="icon"><i class="fa-solid fa-user"></i></span>
+          <input type="text" placeholder="Kullanıcı Adı" required>
+        </div>
+
+        <!-- Şifre -->
+        <div class="input-group">
+          <span class="icon"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" placeholder="Şifre" required>
+        </div>
+
+        <!-- Beni Hatırla -->
+        <div class="remember-me">
+          <input type="checkbox" id="remember">
+          <label for="remember">Beni Hatırla</label>
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="btn-primary">Giriş Yap</button>
+          <a href="register.html" class="btn-secondary">Kayıt Ol</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Popup kutusu -->
+  <div id="warning-popup"><i class="fa-solid fa-triangle-exclamation"></i> Şu anda sunucu aktif değil!</div>
+
+  <script>
+    const popup = document.getElementById("warning-popup");
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // normal giriş işlemini engelle
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 2500);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* Genel stil */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("images/backgorund.png") no-repeat center bottom fixed;
+  background-size: cover;
+}
+
+/* Ortadaki kutu */
+.register-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* sağa yasla */
+  align-items: center;
+  padding-right: 0px;
+}
+
+.register-box {
+  background: rgba(13, 13, 13, 0.644); /* siyahımsı saydam */
+  color: #fff;
+  padding: 50px;
+  border-radius: 12px;
+  width: 550px;
+  height: 852px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Kutunun fade-in animasyonu */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+
+  position: relative; /* butonun konumlandırılması için */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
+
+/* Başlık */
+.register-box h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-top: -120px;  /* Yukarı çekmek için eksi değer */
+  margin-bottom: 30px;
+}
+
+/* Açıklama yazısı */
+.register-box p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #ddd;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+
+/* === İKONLU INPUT GRUPLARI === */
+.input-group {
+  display: flex;
+  align-items: center;
+  
+  border-radius: 6px;
+  margin: 10px auto;
+  width: 90%;
+  padding: 0 12px;
+  transition: all 0.3s ease;
+}
+
+/* Hover & Focus durumunda daha belirgin */
+.input-group:hover,
+.input-group:focus-within {
+  background: rgba(13, 13, 13, 0.9); /* daha koyu, belirgin */
+  border-color: #f22c35;
+  box-shadow: 0 0 10px rgba(167, 40, 40, 0.5);
+  transform: scale(1.02);
+}
+
+.input-group .icon {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #f22c35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+}
+
+/* Checkbox ve label */
+.terms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+.terms label {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Butonlar */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 80%;
+}
+
+.btn-primary {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f22c35;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #f22c35;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn-secondary {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #f22c35;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  color: #f22c35;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  background-color: #f22c35;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* === Sağ üstte Anasayfa butonu === */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* ikon ile yazı arasında boşluk */
+}
+.back-btn:hover {
+  background-color: #f22c35;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+/* Beni Hatırla alanı */
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+  font-size: 14px;
+  color: #f0f0f0;
+}
+
+.remember-me input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #f22c35; /* kutucuğun rengini altın tonuna ayarladım */
+  transform: scale(1.1); /* biraz büyütme */
+}
+
+.remember-me label {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.remember-me label:hover {
+  color: #ffffff; /* hover olduğunda biraz daha parlak */
+}
+.terms a {
+  color: #f22c35;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.terms a:hover {
+  color: #f11722;
+}
