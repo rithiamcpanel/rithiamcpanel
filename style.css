@@ -127,7 +127,7 @@ body {
 /* Hero */
 .hero {
   height: 100vh;
-  background: url("images/backgorund.png");
+  background: url("images/background.png");
   background-size: cover; /* Resmi ekrana orantılı şekilde büyütür */
   background-position: center 90%;
   position: relative;
