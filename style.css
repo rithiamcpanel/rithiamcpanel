@@ -282,7 +282,6 @@ body {
   border-radius: 12px;
   padding: 1.5rem 2rem;
   text-align: center;
-  box-shadow: 0 0 20px rgba(200, 0, 0, 0.2);
   transition: transform 0.3s ease, background 0.3s ease;
   cursor: default;
   min-width: 240px;
